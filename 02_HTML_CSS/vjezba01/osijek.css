@@ -26,7 +26,27 @@ div p{ color:  pink;}
 
 
 
+/*Selektor identifikacije*/
 
+#sadržaj(
+    font-family:sans-serif;
+
+
+
+    ul{
+        list-style: none;
+
+
+        ul li::before{
+            content: icon;
+        }
+    
+
+    }
+
+        ul
+    }
+)
 
 
 
