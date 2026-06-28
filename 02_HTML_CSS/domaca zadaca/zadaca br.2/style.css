@@ -1,0 +1,180 @@
+body {
+    background-color: skyblue;
+
+    /* Resetiranje  osnovnih stilova*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: #b3daf1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-wrapper {
+
+
+        width: 100%;
+
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+
+
+    }
+    
+    
+
+
+    .login-card h2 {
+        color: #161616;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .input-group {
+        margin-bottom: 18px;
+
+    }
+
+    .input-group label {
+        display: block;
+        color: #161616;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid#a8a8a8;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #161616;
+        outline: none;
+
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-top: 22px;
+        margin-bottom: 22px;
+
+    }
+
+    .checkbox-group input {
+        margin-right: 8px;
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+    }
+
+    .checkbox-group label {
+        color: #161616;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .bnt-submit {
+        width: 100%;
+        background-color: #0f62fe;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+    }
+
+    .bnt-submit:hover {
+        background-color: #0043ce;
+
+    }
+
+    .activity-section {
+        width: 100%;
+        margin-top: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .activity-section h3 {
+        color: #002d9c;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .activity-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    .activity-table th {
+        color: #161616;
+        font-size: 11px;
+        font-weight: 600;
+        padding-bottom: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .activity-table td {
+        padding: 10px 0;
+        font-size: 13px;
+        color: #161616;
+
+    }
+
+    .status-success {
+        color: #161616;
+    }
+
+    .status-error {
+        color: #da1e28;
+
+    }
+
+    .search-icon {
+        color: #161616;
+        font-size: 12px;
+    }
+
+    .table-footer {
+        text-align: center;
+        color: #0f62fe;
+        font-size: 11px;
+        margin-top: 15px;
+    }
+
+}
+
+}
+
+
+}
