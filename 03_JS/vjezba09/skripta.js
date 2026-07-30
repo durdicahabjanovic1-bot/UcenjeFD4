@@ -1,232 +1,111 @@
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
-console.log('Edunova')
+// while petlja
+// while radi s boolean tipom podatka
+// sve do je true (izraz ili varijabla) ostaje se u petlji
 
-console.log('============================')
-
-for(let i=0;i<10;i++){
+// beskonačna petlja
+while(true){
     console.log('Edunova')
-}
-console.log('============================')
-
-for(let i=0;i<10;i++){
-    console.log(`i=${i+1}`)
-
+    break
 }
 
-console.log('============================')
+// continue i break rade jedako kao u for
 
-let suma=0
-for(let i=0;i<100;i++){
-    suma += i+1
-   // debugger
+let brojac = 0
+
+console.time('while petlja')
+let suma = 0
+while(brojac++ < 100){
+    //console.log(brojac) // 1,2,3, ... 100
+    suma += brojac
 }
 
+console.timeEnd('while petlja')
 console.log(suma)
 
-console.log('============================')
 
-for(let i=10;i>0;i--){
-    console.log(i)
-}
+const brojUnos = '1262' // simuliram da je unio korisnik = 11
+// zbroji sve znamenke broja
 
-console.log('============================')
-
-
-for(let i=7; i<20;i+=2){
-    console.log(i)
-
-}
-
-console.log('============================')
-
-
-const pocetak = 7
-const kraj = 20
-const uvecanje = 2
-
-for(let i = pocetak; i < kraj; i+=uvecanje){
-    console.log(i)
-}
-
-console.log('============================')
-
-for(let i = kraj; i<pocetak; i++){
-    console.log('Ovo se ne ispisuje jer nije ušao u petlju')
-}
-
-console.log('============================')
-
-for(let i = 1; i <= 50; i++){
-    if(i % 2=== 0){
-        console.log(i)
-
-    }
-}
-
-console.log('============================')
-
+console.time('ZB1')
 
 suma = 0
-for(let i=7; i<=77; i++){
-    if(i % 2 ===1){
-        suma += i
-    }
+
+for(let i=0; i<brojUnos.length;i++){
+    suma += Number(brojUnos[i]) // ovo pozivam 4 puta, 0.04
 }
 
+console.timeEnd('ZB1')
 console.log(suma)
 
+console.time('ZB2')
 
-console.log('============================')
+let broj = Number(brojUnos) // ovo pozivam jednom, imam broj 1262
 
-let prim = true
-const broj = 72
+suma = 0
 
-for(let i=2;i<broj;i++){
-    if(broj % i ===0){
-        prim=false
-        break
-
-    }else{
-        if(i % 10000  === 0){
-             console.log(i)
-
-        }
-      
-    }
-
+while(broj>0){
+    suma += broj % 10 // 1262 % 10 = 2  | 126 % 10 = 6 | 12 % 10 = 2 | 1 % 10 = 1
+    broj = broj - (broj % 10) // 1262 - 2 = 1260 | 126 - 6 = 120 | 12 - 2 = 10 | 1 - 1 = 0
+    broj /= 10  // 1260 / 10 = 126  | 120 / 10 = 12 | 10 / 10 = 1 | 0 / 10 = 0
 }
 
-console.log(prim ? 'PRIM' : 'NIJE PRIM')
+console.timeEnd('ZB2')
+console.log(suma)
+
+// 1262 / 10 = 126 cjelobrojno, 126 * 10 = 1260, 1262 - 1260 = 2
+
+// 126 / 10 = 12 cjelobrojno, 12 * 10 = 120, 126 - 120 = 6
+
+// 12 / 10 = 1 cjelobrojno, 1 * 10 = 10, 12 - 10 = 2
+
+// 1 / 10 = 0 cjelobrojno, 0 * 10 = 0, 1 - 0 = 1 
+
+// čitati više o optimizaciji
+
+/**
+ * BIG O NOTATION - TABLICA KOMPLEKSNOSTI
+ * ---------------------------------------------------------------------------------------
+ * | Notacija     | Naziv                | Ocjena      | Primjer operacije               |
+ * |--------------|----------------------|-------------|---------------------------------|
+ * | O(1)         | Konstantno           | Izvrsno     | Pristup elementu preko indeksa  |
+ * | O(log n)     | Logaritamsko         | Odlično     | Binarno pretraživanje           |
+ * | O(n)         | Linearno             | Dobro       | Jednostavna petlja (for/forEach)|
+ * | O(n log n)   | Linearno-logaritamsko| Solidno     | Merge Sort, Quick Sort          |
+ * | O(n^2)       | Kvadratično          | Loše        | Dvostruka ugniježđena petlja    |
+ * | O(2^n)       | Eksponencijalno      | Vrlo loše   | Rekurzivni Fibonacci            |
+ * | O(n!)        | Faktorijelno         | Katastrofa  | Brute-force rješenja            |
+ * ---------------------------------------------------------------------------------------
+ * * LEGENDA RASTA (n = broj elemenata):
+ * - O(1)       -> Vrijeme je uvijek isto (npr. 1ms)
+ * - O(log n)   -> Ako se n poveća 100x, vrijeme se poveća samo par puta
+ * - O(n)       -> Ako se n poveća 100x, vrijeme se poveća 100x
+ * - O(n^2)     -> Ako se n poveća 100x, vrijeme se poveća 10,000x!
+ */
 
 
+// činjenica: u for i while se ne mora ući
 
-console.log('============================')
+const x = 5
 
-
-for(let i=0;i<10;i++){
-    if(i === 3){
-        continue
-    }
-    if(i === 7){
-        break
-    }
-    console.log(i)
+for(let i=0; i>x;i++){
+    console.log('Ušao u petlju')
 }
 
-console.log('============================')
-const x = 10
-
-document.write('<table>')
-for(let i=1;i<=10;i++){
-    document.write('<tr>')
-
-    for(let j=1;j<=10;j++){
-        document.write(`<td>${i*j}</td>`)
-
+const podaciAPI = [
+    
+    {
+        ime: 'Pero'
+    },
+    {
+        ime: 'Marko'
+    },
+    {
+        ime: 'Marija'
     }
-     document.write('</tr>')
+        
+]
+
+while(podaciAPI.length>0){ // 0 je falsy
+    // funkcija pop() uzima zadnji element niza i skrućuje niz za 1
+    console.log('Ušao u petlju', podaciAPI.pop()?.ime)
 }
-
-
-document.write('</table>')
-
-console.log('============================')
-
-const niz = ['Marija', 'Zvonko', 'Ana', 'Miro', 'Tena']
-
-    for(let i=0; i<niz.length;i++){
-        console.log(niz[i])
-    }
-
-    console.log('============================')
-
-    for(let i=niz.length-1; i>0;i--){
-        console.log(niz[i])
-    }
-
-    const osobe = [
-    {
-        ime: 'Tomislav',
-        prezime: 'Jakopec',
-        godine: 45
-    },
-    {
-        ime: 'Dora',
-        prezime: 'Jakopec',
-        godine: 10
-    },
-    {
-        ime: 'Mara',
-        prezime: 'Jakopec',
-        godine: 19
-    },
-    {
-        ime: 'Lada',
-        prezime: 'Jakopec',
-        godine: 10
-    }
-    ]
-
-    for(let i=0;i<osobe.length;i++){
-        suma+=osobe[i]?.godine ?? 0 
-    }
-
-    console.log(suma)
-
-    suma=0
-    for(const o of osobe){
-        suma += o?.godine ?? 0
-    }
-
-    console.log(suma)
-
-    console.log('============================')
-
-    const ime='Nina'
-    for(const z of ime){
-        console.log(z, z.charCodeAt(0))
-        document.write(`&#${z.charCodeAt(0)};`)
-    }
-
-    console.log('============================')
-    let brojac = 0
-    document.write('<hr><h1>')
-    for(;;){
-        document.write(`&amp;#${++brojac};<br>`)
-        if(brojac>65535){
-            break
-        }
-
-    }
-    document.write('</h1>')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
